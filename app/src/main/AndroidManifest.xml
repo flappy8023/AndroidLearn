@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.androidlearn">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AndroidLearn">
+        <activity
+            android:name=".ipc.messenger.MessengerActivity"
+            android:exported="true"
+            android:label="@string/title_activity_messenger"
+            android:theme="@style/Theme.AndroidLearn.NoActionBar">
+
+        </activity>
+
+        <service
+            android:name=".ipc.aidl.RemoteService"
+            android:enabled="true"
+            android:exported="true"
+            android:process="gooo.go" />
+
+        <activity
+            android:name=".ipc.aidl.AIDLActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".jetpack.ViewModelActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".thread.MainActivity"
+            android:exported="true" />
+
+        <service
+            android:name=".ipc.messenger.MessengerRemoteService"
+            android:enabled="true"
+            android:exported="true"
+            android:process="far.far" />
+    </application>
+
+</manifest>
