@@ -1,4 +1,4 @@
-package com.example.androidlearn.jetpack
+package com.example.androidlearn.jetpack.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

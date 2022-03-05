@@ -1,4 +1,4 @@
-package com.example.androidlearn.jetpack
+package com.example.androidlearn.jetpack.viewmodel
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
