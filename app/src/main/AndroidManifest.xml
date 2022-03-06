@@ -12,32 +12,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
+        <service
+            android:name=".ipc.aidl.BinderPoolService"
+            android:enabled="true"
+            android:process=":gogogo"
+            android:exported="true"></service>
+
         <activity
             android:name=".ipc.socket.SocketActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <service
             android:name=".ipc.socket.TcpServerService"
             android:enabled="true"
-            android:process=".tcp"
-            android:exported="true"></service>
+            android:exported="true"
+            android:process=".tcp" />
 
         <activity
             android:name=".ipc.provider.ProviderActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ipc.messenger.MessengerActivity"
             android:exported="true"
             android:label="@string/title_activity_messenger"
-            android:theme="@style/Theme.AndroidLearn.NoActionBar"></activity>
+            android:theme="@style/Theme.AndroidLearn.NoActionBar" />
 
         <service
             android:name=".ipc.aidl.RemoteService"
@@ -47,7 +47,13 @@
 
         <activity
             android:name=".ipc.aidl.AIDLActivity"
-            android:exported="true"></activity>
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".jetpack.viewmodel.ViewModelActivity"
             android:exported="true" />
