@@ -12,17 +12,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
+        <receiver
+            android:name=".remoteviews.NewAppWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.example.androidlearn.click"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/new_app_widget_info" />
+        </receiver>
+
+        <activity
+            android:name=".remoteviews.NotificationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".ipc.aidl.BinderPoolService"
             android:enabled="true"
-            android:process=":gogogo"
-            android:exported="true"></service>
+            android:exported="true"
+            android:process=":gogogo" />
 
         <activity
             android:name=".ipc.socket.SocketActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
 
         <service
             android:name=".ipc.socket.TcpServerService"
@@ -32,7 +53,7 @@
 
         <activity
             android:name=".ipc.provider.ProviderActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ipc.messenger.MessengerActivity"
             android:exported="true"
@@ -47,13 +68,7 @@
 
         <activity
             android:name=".ipc.aidl.AIDLActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".jetpack.viewmodel.ViewModelActivity"
             android:exported="true" />
