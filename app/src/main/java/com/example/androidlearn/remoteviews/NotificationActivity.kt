@@ -10,11 +10,14 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.RemoteViews
 import androidx.annotation.RequiresApi
 import com.example.androidlearn.R
 import com.example.androidlearn.databinding.ActivityNotificationBinding
 import com.example.androidlearn.ipc.aidl.AIDLActivity
+import com.example.androidlearn.json.GsonTest
+import com.google.gson.Gson
 
 class NotificationActivity : AppCompatActivity() {
     lateinit var binding: ActivityNotificationBinding
@@ -25,6 +28,7 @@ class NotificationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNotificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+       GsonTest.main(null)
         val notificationManager: NotificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         binding.btShow.setOnClickListener {
@@ -45,7 +49,7 @@ class NotificationActivity : AppCompatActivity() {
                         this,
                         0,
                         Intent(this, AIDLActivity::class.java),
-                        PendingIntent.FLAG_UPDATE_CURRENT
+                        PendingIntent.FLAG_IMMUTABLE
                     )
                 )
                 .build()
@@ -64,7 +68,7 @@ class NotificationActivity : AppCompatActivity() {
                             this@NotificationActivity,
                             0,
                             Intent(this@NotificationActivity,AIDLActivity::class.java),
-                            PendingIntent.FLAG_UPDATE_CURRENT
+                            PendingIntent.FLAG_IMMUTABLE
                         )
                     )
                 }).build()

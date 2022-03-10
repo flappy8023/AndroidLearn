@@ -40,6 +40,9 @@ public class Book implements Parcelable {
         dest.writeString(name);
         dest.writeInt(id);
     }
+    public Book(String name){
+        this.name = name;
+    }
 
     public Book(String name, int id) {
         this.name = name;
