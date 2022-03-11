@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
+        <activity
+            android:name=".jetpack.lifecycle.LifecycleActivity"
+            android:exported="true" />
         <activity
             android:name=".window.FloatingButtonActivity"
             android:exported="true">
@@ -38,8 +41,7 @@
 
         <activity
             android:name=".remoteviews.NotificationActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
 
         <service
             android:name=".ipc.aidl.BinderPoolService"
