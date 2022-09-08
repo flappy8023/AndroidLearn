@@ -41,5 +41,10 @@
         android:layout_height="wrap_content"
         android:text="get books"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start activity in another process"
+        android:id="@+id/button8"/>
 
 </LinearLayout>

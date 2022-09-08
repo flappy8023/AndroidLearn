@@ -58,6 +58,9 @@ class AIDLActivity : AppCompatActivity() {
             val list = manager.books
             Log.d(TAG, "get books,size = ${list.size}")
         }
+        binding.button8.setOnClickListener {
+            startActivity(Intent(this,SecondActivity::class.java))
+        }
     }
 
     private fun testBinderPool() {

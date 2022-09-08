@@ -7,6 +7,7 @@ plugins {
 android {
     compileSdk 31
 
+
     defaultConfig {
         applicationId "com.example.androidlearn"
         minSdk 21
@@ -17,6 +18,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures{
+        dataBinding = true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -69,10 +73,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.tencent:mmkv:1.2.12'
 }
 
 dependencies {
 
 
 
+implementation project(path: ':core')
 }

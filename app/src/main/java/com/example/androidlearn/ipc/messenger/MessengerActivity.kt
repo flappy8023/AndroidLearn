@@ -8,6 +8,9 @@ import android.os.*
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androidlearn.databinding.ActivityMessenger2Binding
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MessengerActivity : AppCompatActivity() {
     lateinit var binding: ActivityMessenger2Binding
@@ -28,6 +31,10 @@ class MessengerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMessenger2Binding.inflate(layoutInflater)
         setContentView(binding.root)
+        GlobalScope.launch {
+            delay(3000)
+            Log.e("fff",Thread.currentThread().name)
+        }
         val conn: ServiceConnection = object : ServiceConnection {
             override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
                 Log.d("fff", "onConnect")
