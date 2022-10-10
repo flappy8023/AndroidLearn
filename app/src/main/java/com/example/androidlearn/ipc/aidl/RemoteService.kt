@@ -9,8 +9,15 @@ import com.example.androidlearn.IBookManager
 import com.example.androidlearn.INewBookListener
 
 class RemoteService : Service() {
+    companion object{
+        private const val TAG = "RemoteService"
+    }
     private val bookList: ArrayList<Book> = arrayListOf()
     private  var listener: INewBookListener? = null
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        Log.d("fff","onStartCommand")
+        return super.onStartCommand(intent, flags, startId)
+    }
     override fun onBind(intent: Intent): IBinder {
         return object : IBookManager.Stub() {
 
@@ -39,5 +46,15 @@ class RemoteService : Service() {
                 return bookList
             }
         }
+    }
+
+    override fun onUnbind(intent: Intent?): Boolean {
+        Log.d(TAG, "onUnbind: ")
+        return super.onUnbind(intent)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy: ")
     }
 }

@@ -4,27 +4,30 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
-import com.example.androidlearn.*
+import androidx.appcompat.app.AppCompatActivity
+import com.example.androidlearn.Book
+import com.example.androidlearn.IBookManager
+import com.example.androidlearn.INewBookListener
+import com.example.androidlearn.IUserInterface
 import com.example.androidlearn.databinding.ActivityAidlactivityBinding
 
 class AIDLActivity : AppCompatActivity() {
     private val TAG = "AIDLActivity"
-    private lateinit var manager: IBookManager
+    private var manager: IBookManager? = null
     lateinit var binding: ActivityAidlactivityBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAidlactivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        testBinderPool()
+//        testBinderPool()
         val connection: ServiceConnection = object : ServiceConnection {
             override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
                 Log.d(TAG, "service connect")
                 manager = IBookManager.Stub.asInterface(service)
-                manager.setOnNewBookListener(object : INewBookListener.Stub() {
+                manager?.setOnNewBookListener(object : INewBookListener.Stub() {
                     override fun onNewBook(book: Book?) {
                         Log.d(TAG, "a new book is coming")
                     }
@@ -47,19 +50,18 @@ class AIDLActivity : AppCompatActivity() {
             unbindService(connection)
         }
         binding.button5.setOnClickListener {
-            manager.addBook(Book("水浒传", 0))
+            manager?.addBook(Book("水浒传", 0))
             Log.d(TAG, "add a book")
         }
         binding.button6.setOnClickListener {
-            val book = manager.getBookById(0)
-            Log.d(TAG, "get book by id:" + book.name)
+            val book = manager?.getBookById(0)
+            Log.d(TAG, "get book by id:" + book?.name)
         }
         binding.button7.setOnClickListener {
-            val list = manager.books
-            Log.d(TAG, "get books,size = ${list.size}")
+            val list = manager?.books
+            Log.d(TAG, "get books,size = ${list?.size}")
         }
         binding.button8.setOnClickListener {
-            startActivity(Intent(this,SecondActivity::class.java))
         }
     }
 
