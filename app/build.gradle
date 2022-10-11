@@ -37,6 +37,7 @@ android {
     viewBinding {
         enabled = true
     }
+    namespace 'com.example.androidlearn'
     buildFeatures {
         viewBinding true
     }

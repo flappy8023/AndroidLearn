@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.androidlearn">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <queries>
-        <package android:name="com.szsh.sdkc2"/>
+        <package android:name="com.szsh.sdkc2" />
     </queries>
-    <uses-permission android:name="com.szsh.sdkc2.ACCESS_C2SERVICE"/>
 
+    <uses-permission android:name="com.szsh.sdkc2.ACCESS_C2SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -19,6 +18,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
+        <activity
+            android:name=".fragment.FragmentTestActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".backstate.BackgroundActivity"
+            android:exported="false" />
         <activity
             android:name=".animator.AnimatorActivity"
             android:exported="false" />
@@ -40,9 +49,8 @@
         <activity
             android:name=".animator.EvaluatorActivity"
             android:exported="true" />
-        <activity
-            android:name=".security.SecurityActivity"/>
-        <activity android:name = ".security.DHActivity"/>
+        <activity android:name=".security.SecurityActivity" />
+        <activity android:name=".security.DHActivity" />
         <activity
             android:name=".window.SwitchScreenActivity"
             android:configChanges="screenSize|orientation"
@@ -67,7 +75,6 @@
                 android:resource="@xml/new_app_widget_info" />
         </receiver>
 
-
         <activity
             android:name=".remoteviews.NotificationActivity"
             android:exported="true" />
@@ -91,7 +98,6 @@
         <activity
             android:name=".ipc.provider.ProviderActivity"
             android:exported="true" />
-
         <activity
             android:name=".ipc.messenger.MessengerActivity"
             android:exported="true"
@@ -122,6 +128,7 @@
             android:authorities="com.example.androidlearn.ipc.provider"
             android:exported="true"
             android:process=":hi" />
+
         <activity
             android:name=".ipc.IPCActivity"
             android:exported="false" />
