@@ -10,6 +10,7 @@ import com.example.androidlearn.databinding.ActivityMainBinding
 import com.example.androidlearn.fragment.FragmentTestActivity
 import com.example.androidlearn.ipc.IPCActivity
 import com.example.androidlearn.security.SecurityActivity
+import com.example.androidlearn.workmanager.WorkManagerActivity
 import com.flappy.wanandroid.base.BaseActivity
 
 open class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -31,7 +32,7 @@ open class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     open fun getData(): List<String> {
-        return listOf("自定义View", "动画", "进程间通信", "加解密", "前后台","Fragment")
+        return listOf("自定义View", "动画", "进程间通信", "加解密", "前后台", "Fragment", "WorkManager")
     }
 
     open fun click(position: Int) {
@@ -42,6 +43,7 @@ open class MainActivity : BaseActivity<ActivityMainBinding>() {
             3 -> startAct(SecurityActivity::class.java)
             4 -> startAct(BackgroundActivity::class.java)
             5 -> startAct(FragmentTestActivity::class.java)
+            6 -> startAct(WorkManagerActivity::class.java)
         }
     }
 

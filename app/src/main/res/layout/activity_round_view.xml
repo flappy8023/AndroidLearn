@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".customview.RoundViewActivity">
+
+        <com.example.androidlearn.customview.roundimage.CircleImageView
+            android:id="@+id/iv_1"
+            android:layout_width="500dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/test"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="clipPath"
+            app:layout_constraintBottom_toBottomOf="@id/iv_1"
+            app:layout_constraintStart_toEndOf="@id/iv_1"
+            app:layout_constraintTop_toTopOf="@id/iv_1" />
+
+        <ImageView
+            android:id="@+id/iv_2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/test"
+            app:layout_constraintStart_toStartOf="@id/iv_1"
+            app:layout_constraintTop_toBottomOf="@id/iv_1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+
+            android:text="ViewOutLineProvider\nView.setOutlineProvider  getOutline中调用Outline.setRoundRect"
+            app:layout_constraintBottom_toBottomOf="@id/iv_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_2"
+            app:layout_constraintTop_toTopOf="@id/iv_2" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/test"
+            app:layout_constraintStart_toStartOf="@id/iv_1"
+            app:layout_constraintTop_toBottomOf="@id/iv_2"
+            app:shapeAppearance="@style/roundStyle"
+            app:strokeColor="@android:color/holo_red_dark"
+            app:strokeWidth="2dp" />
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="ShapeableImageView\n定义Style,声明：cornerFamily、cornerSize等属性"
+            app:layout_constraintBottom_toBottomOf="@id/iv_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_3"
+            app:layout_constraintTop_toTopOf="@id/iv_3" />
+
+        <ImageView
+            android:id="@+id/iv_4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="@id/iv_1"
+            app:layout_constraintTop_toBottomOf="@id/iv_3"
+            tools:src="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="BitmapShader\n用bitmap构造BitmapShader设置到画笔，绘制圆角矩形"
+            app:layout_constraintBottom_toBottomOf="@id/iv_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_4"
+            app:layout_constraintTop_toTopOf="@id/iv_4" />
+
+        <ImageView
+            android:id="@+id/iv_5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="@id/iv_4"
+            app:layout_constraintTop_toBottomOf="@id/iv_4"
+            tools:src="@android:color/holo_green_dark" />
+
+        <TextView
+            android:id="@+id/tv_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Glide "
+            app:layout_constraintBottom_toBottomOf="@id/iv_5"
+            app:layout_constraintStart_toEndOf="@id/iv_5"
+            app:layout_constraintTop_toTopOf="@id/iv_5" />
+
+        <ImageView
+            android:id="@+id/iv_6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_5"
+            tools:src="@android:color/holo_red_dark" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Xfermode\n先绘制圆角矩形，为画笔设置xfermode，绘制bitmap取交集展示"
+            app:layout_constraintBottom_toBottomOf="@id/iv_6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_6"
+            app:layout_constraintTop_toTopOf="@id/iv_6" />
+
+        <ImageView
+            android:id="@+id/iv_7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_6"
+            tools:src="@android:color/holo_green_dark" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="RoundedBitmapDrawable\n系统封装的BitmapShader"
+            app:layout_constraintBottom_toBottomOf="@id/iv_7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_7"
+            app:layout_constraintTop_toTopOf="@id/iv_7" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -19,6 +19,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
         <activity
+            android:name=".customview.RoundViewActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".workmanager.WorkManagerActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".fragment.FragmentTestActivity"
             android:exported="false">
             <meta-data
