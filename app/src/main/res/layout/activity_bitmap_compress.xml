@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".bitmap.BitmapCompressActivity">
+
+        <RadioGroup
+            android:id="@+id/rg_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/rb_quality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="质量压缩" />
+
+            <RadioButton
+                android:id="@+id/rb_insample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="采样率压缩" />
+
+            <RadioButton
+                android:id="@+id/rb_matrix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Matrix缩放" />
+
+            <RadioButton
+                android:id="@+id/rb_configFormat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="编码格式压缩" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rg_imgType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rg_type">
+
+            <RadioButton
+                android:id="@+id/rb_jpg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="jpeg" />
+
+            <RadioButton
+                android:id="@+id/rb_png"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="png" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="200dp"
+            android:layout_height="400dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rg_imgType"
+            tools:src="@drawable/img_jpg" />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:min="0"
+            android:progress="100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_img" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text=""
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seekbar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

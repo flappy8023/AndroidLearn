@@ -19,6 +19,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
         <activity
+            android:name=".kotlin.coroutine.CoroutineActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name=".kotlin.KotlinFeatureActivity" />
+        <activity android:name=".bitmap.BitmapCompressActivity" />
+        <activity android:name=".jetpack.JetpackActivity" />
+        <activity android:name=".bitmap.BitmapActivity" />
+        <activity
+            android:name=".kotlin.flow.FlowTestActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".multithread.ThreadActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".customview.RoundViewActivity"
             android:exported="false">
             <meta-data
@@ -26,7 +51,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".workmanager.WorkManagerActivity"
+            android:name=".jetpack.workmanager.WorkManagerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

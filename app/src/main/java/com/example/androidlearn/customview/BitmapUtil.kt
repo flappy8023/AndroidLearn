@@ -1,6 +1,9 @@
 package com.example.androidlearn.customview
 
+import android.content.res.Resources
 import android.graphics.*
+import android.graphics.Bitmap.CompressFormat
+import java.io.ByteArrayOutputStream
 
 
 /**
@@ -69,5 +72,45 @@ object BitmapUtil {
         }
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
     }
+
+    fun compressQuality(bitmap: Bitmap, format: CompressFormat, quality: Int): Bitmap {
+        val outStream = ByteArrayOutputStream()
+        bitmap.compress(format, quality, outStream)
+        val bytearray = outStream.toByteArray()
+        return BitmapFactory.decodeByteArray(bytearray, 0, bytearray.size)
+    }
+
+    /**
+     * 采样率压缩
+     *
+     * @param resource
+     * @param id
+     * @param inSample
+     * @return
+     */
+    fun compressInSample(resource: Resources, id: Int, inSample: Int): Bitmap {
+        val option = BitmapFactory.Options()
+        option.inSampleSize = inSample
+        return BitmapFactory.decodeResource(resource, id, option)
+
+    }
+
+    fun compressMatrix(bitmap: Bitmap, scale: Float): Bitmap {
+        val matrix = Matrix()
+        matrix.setScale(scale, scale)
+        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+    }
+
+    fun compressFormat(resource: Resources,id: Int):Bitmap{
+
+        return BitmapFactory.decodeResource(resource,id,BitmapFactory.Options().apply { inPreferredConfig = Bitmap.Config.RGB_565 })
+    }
+
+    fun getBitmapSize(bitmap: Bitmap, format: CompressFormat): Int {
+        val outStream = ByteArrayOutputStream()
+        bitmap.compress(format, 100, outStream)
+        return outStream.toByteArray().size
+    }
+
 
 }

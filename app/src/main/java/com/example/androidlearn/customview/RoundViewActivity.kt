@@ -69,7 +69,6 @@ class RoundViewActivity : AppCompatActivity() {
             val roundedBitmap = RoundedBitmapDrawableFactory.create(resources,bitmap)
             //内部也是BitmapShader
             roundedBitmap.cornerRadius = iv7.width/2f
-            bitmap.compress()
             roundedBitmap.setAntiAlias(true)
             iv7.setImageDrawable(roundedBitmap)
         }
