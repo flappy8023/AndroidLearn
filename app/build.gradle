@@ -83,6 +83,6 @@ dependencies {
 dependencies {
 
 
-
-implementation project(path: ':core')
+    implementation project(path: ':javatest')
+    implementation project(path: ':core')
 }

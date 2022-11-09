@@ -1,7 +1,5 @@
 package com.example.androidlearn.json;
 
-import static org.junit.Assert.*;
-
 import junit.framework.TestCase;
 
 import org.junit.After;
@@ -25,8 +23,5 @@ public class GsonTestTest extends TestCase {
 
     @Test
     public void testGson(){
-        String json=GsonTest.generate();
-        String json1 = GsonTest.generate1();
-        GsonTest.main(null);
     }
 }
