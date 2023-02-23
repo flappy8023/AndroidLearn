@@ -1,12 +1,13 @@
 package com.example.androidlearn.main
 
 import android.content.Intent
+import android.os.Looper
+import android.util.Log
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidlearn.R
-import com.example.androidlearn.animator.AnimatorActivity
 import com.example.androidlearn.backstate.BackgroundActivity
 import com.example.androidlearn.bitmap.BitmapCompressActivity
-import com.example.androidlearn.customview.CustomViewActivity
 import com.example.androidlearn.databinding.ActivityMainBinding
 import com.example.androidlearn.fragment.FragmentTestActivity
 import com.example.androidlearn.ipc.IPCActivity
@@ -15,11 +16,15 @@ import com.example.androidlearn.kotlin.KotlinFeatureActivity
 import com.example.androidlearn.multithread.ThreadActivity
 import com.example.androidlearn.security.SecurityActivity
 import com.flappy.wanandroid.base.BaseActivity
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 open class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private val adapter by lazy { MainAdapter() }
     override fun initView() {
+        Looper.getMainLooper().setMessageLogging { Log.d("ffffffff", it) }
         binding.rvMain.apply {
             layoutManager =
                 LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
@@ -49,10 +54,11 @@ open class MainActivity : BaseActivity<ActivityMainBinding>() {
         )
     }
 
+
     open fun click(position: Int) {
         when (position) {
-            0 -> startAct(CustomViewActivity::class.java)
-            1 -> startAct(AnimatorActivity::class.java)
+            0 -> startCoroutine()
+            1 -> stopCoroutine()
             2 -> startAct(ThreadActivity::class.java)
             3 -> startAct(IPCActivity::class.java)
             4 -> startAct(SecurityActivity::class.java)
@@ -60,8 +66,22 @@ open class MainActivity : BaseActivity<ActivityMainBinding>() {
             6 -> startAct(FragmentTestActivity::class.java)
             7 -> startAct(JetpackActivity::class.java)
             8 -> startAct(KotlinFeatureActivity::class.java)
-            9->startAct(BitmapCompressActivity::class.java)
+            9 -> startAct(BitmapCompressActivity::class.java)
         }
+    }
+
+    lateinit var job: Job
+    fun startCoroutine() {
+        job = lifecycleScope.launch {
+            while (true) {
+                delay(1000)
+                Log.d("ggggggggg", "1111")
+            }
+        }
+    }
+
+    fun stopCoroutine() {
+        job.cancel()
     }
 
     override fun getLayoutId(): Int {

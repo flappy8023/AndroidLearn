@@ -14,16 +14,16 @@ import kotlinx.coroutines.launch
  * @Description: TODO
  * @Date: Created in 9:56 2022/3/11
  */
-class LifecycleOb:DefaultLifecycleObserver {
+class LifecycleOb : DefaultLifecycleObserver {
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
         GlobalScope.launch {
-            while (owner.lifecycle.currentState.isAtLeast(Lifecycle.State.CREATED)){
+            while (owner.lifecycle.currentState.isAtLeast(Lifecycle.State.CREATED)) {
                 delay(200)
-                Log.d("ffff","CREATED")
+                Log.d("ffff", "CREATED")
             }
-            if(Lifecycle.State.DESTROYED==owner.lifecycle.currentState){
-                Log.e("ffff","I am Destroyed")
+            if (Lifecycle.State.DESTROYED == owner.lifecycle.currentState) {
+                Log.e("ffff", "I am Destroyed")
             }
         }
 
