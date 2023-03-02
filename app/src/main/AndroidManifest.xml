@@ -175,6 +175,16 @@
         <activity
             android:name=".customview.ScrollerAct"
             android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".customview.ClockAct"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".animator.MotionAct"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
