@@ -2,19 +2,19 @@ package com.example.androidlearn.kotlin.flow
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.example.androidlearn.R
 import com.example.androidlearn.databinding.ActivityFlowTestBinding
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class FlowTestActivity : AppCompatActivity() {
+    companion object {
+        private const val TAG = "FlowTestActivity"
+    }
+
     private val viewModel by viewModels<FlowTestViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,24 +23,12 @@ class FlowTestActivity : AppCompatActivity() {
             R.layout.activity_flow_test
         )
         lifecycleScope.launch {
-            launch {
-                viewModel.timer.collect {
-                    binding.tv1.text = "collect:$it"
-                    delay(3000)
-                }
-                Log.d("ffff","ffffffffffff")
+            //冷流不同的消费者互不影响，仅在collect时才开始生产数据
+            viewModel.timer2.collect {
+                Log.d(TAG, "onCreate: $it")
             }
-//            launch {
-//                viewModel.timer.collect {
-//                    //此处不会被执行
-//                    binding.tv1.text = "fffffffffffffff"
-//                }
-//            }
-            launch {
-                viewModel.timer1.collectLatest {
-                    binding.tv2.text = "collectLatest:$it"
-                    delay(3000)
-                }
+            viewModel.timer2.collect {
+                Log.d(TAG, "onCreate: --->$it")
             }
         }
     }

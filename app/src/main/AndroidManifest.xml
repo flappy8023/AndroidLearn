@@ -31,10 +31,12 @@
         <activity android:name=".bitmap.BitmapActivity" />
         <activity
             android:name=".kotlin.flow.FlowTestActivity"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
+
         </activity>
         <activity
             android:name=".multithread.ThreadActivity"
@@ -185,12 +187,23 @@
         <activity
             android:name=".animator.MotionAct"
             android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".performance.RecyclerActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".di.HomeActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

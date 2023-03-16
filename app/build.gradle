@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 32
 
 
     defaultConfig {
         applicationId "com.example.androidlearn"
         minSdk 21
-        targetSdk 31
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -85,6 +85,8 @@ dependencies {
     // explicitly depend on RxJava's latest version for bug fixes and new features.
     // (see https://github.com/ReactiveX/RxJava/releases for latest 3.x.x version)
     implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
+    def koin_android_version = "3.3.3"
+    implementation "io.insert-koin:koin-android:$koin_android_version"
 }
 
 dependencies {
