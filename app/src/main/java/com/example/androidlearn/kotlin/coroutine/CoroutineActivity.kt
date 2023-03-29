@@ -14,6 +14,8 @@ class CoroutineActivity : AppCompatActivity() {
         private const val TAG = "CoroutineActivity"
     }
 
+    private val str: String by lazy(LazyThreadSafetyMode.NONE) { "" }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding: ActivityCoroutineBinding =
@@ -53,5 +55,6 @@ class CoroutineActivity : AppCompatActivity() {
             }
         }
     }
+
 
 }

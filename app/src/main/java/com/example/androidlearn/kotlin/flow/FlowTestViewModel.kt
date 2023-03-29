@@ -1,9 +1,9 @@
 package com.example.androidlearn.kotlin.flow
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
 /**
  * @Author: luweiming
@@ -36,13 +36,6 @@ class FlowTestViewModel : ViewModel() {
             emit(i)
             delay(500)
         }
-    }.onCompletion {
-        Log.d(TAG, "onCompletion: ")
-    }.onEach {
-        Log.d(TAG, ":onEach = $it ")
-    }.onStart {
-        Log.d(TAG, "onStart: ")
+
     }
-
-
 }

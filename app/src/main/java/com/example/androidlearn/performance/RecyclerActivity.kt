@@ -1,6 +1,8 @@
 package com.example.androidlearn.performance
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.SystemClock
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -14,9 +16,9 @@ import com.example.androidlearn.R
 class RecyclerActivity : AppCompatActivity(R.layout.activity_recyclerview) {
     private val list: MutableList<Student> by lazy {
         mutableListOf(
-            Student("xiaowang", 11, 1),
-            Student("xiaoli", 12, 1),
-            Student("xiaolu", 11, 0)
+            Student(1, "xiaowang", 11, 1),
+            Student(2, "xiaoli", 12, 1),
+            Student(3, "xiaolu", 11, 0)
         )
     }
     private lateinit var adapter: DiffAdapter
@@ -28,17 +30,25 @@ class RecyclerActivity : AppCompatActivity(R.layout.activity_recyclerview) {
         findViewById<Button>(R.id.bt_refresh1).setOnClickListener {
             adapter.updateList(
                 mutableListOf(
-                    Student("xiaowang11", 11, 1),
-                    Student("xiaoli11", 12, 1),
-                    Student("xiaolu11", 11, 0)
+                    Student(1, "xiaowang11", 11, 1),
+                    Student(2, "xiaoli11", 12, 1),
+                    Student(3, "xiaolu11", 11, 0)
                 )
             )
         }
 
         findViewById<Button>(R.id.bt_refresh2).setOnClickListener {
-            list.removeAt(0)
-            adapter.updateList(list)
+//            list.removeAt(0)
+//            adapter.updateList(list)
+            startActivity(Intent(this, LeakTestActivity::class.java))
+
         }
+
     }
+
+    private fun sleep2000() {
+        SystemClock.sleep(2000)
+    }
+
 
 }

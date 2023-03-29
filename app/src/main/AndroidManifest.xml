@@ -192,18 +192,32 @@
         <activity
             android:name=".performance.RecyclerActivity"
             android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".di.HomeActivity"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
+        </activity>
+        <activity
+            android:name=".di.HomeActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".backstate.ResultSecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".backstate.ResultTestActivity"
+            android:exported="true">
+
+
+        </activity>
+        <activity
+            android:name=".performance.LeakTestActivity"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

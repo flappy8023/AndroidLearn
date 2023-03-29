@@ -7,6 +7,7 @@ package com.example.androidlearn.performance;
  */
 public class AnnotationTest {
 
+
     private void main() {
         setDay(Const.SATURDAY);
     }
