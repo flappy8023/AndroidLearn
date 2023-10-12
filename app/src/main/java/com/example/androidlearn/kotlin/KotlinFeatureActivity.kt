@@ -10,11 +10,6 @@ import com.example.androidlearn.main.MainActivity
  * @Date: Created in 9:51 2022/11/8
  */
 class KotlinFeatureActivity : MainActivity() {
-    override fun getData() = mutableListOf("Flow", "Coroutine")
-    override fun click(position: Int) {
-        when (position) {
-            0 -> startAct(FlowTestActivity::class.java)
-            1 -> startAct(CoroutineActivity::class.java)
-        }
-    }
+    override fun getData() =
+        mapOf("Flow" to FlowTestActivity::class.java, "Coroutine" to CoroutineActivity::class.java)
 }

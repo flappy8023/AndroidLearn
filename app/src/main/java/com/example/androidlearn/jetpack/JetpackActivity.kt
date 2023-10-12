@@ -11,12 +11,10 @@ import com.example.androidlearn.main.MainActivity
  * @Date: Created in 14:46 2022/11/8
  */
 class JetpackActivity : MainActivity() {
-    override fun getData() = listOf("LifeCycle", "ViewModel", "LiveData", "WorkManager")
-    override fun click(position: Int) {
-        when (position) {
-            0 -> startAct(LifecycleActivity::class.java)
-            1 -> startAct(ViewModelActivity::class.java)
-            3 -> startAct(WorkManagerActivity::class.java)
-        }
-    }
+    override fun getData() = mapOf(
+        "LifeCycle" to LifecycleActivity::class.java,
+        "ViewModel" to ViewModelActivity::class.java,
+        "WorkManager" to WorkManagerActivity::class.java
+    )
+
 }

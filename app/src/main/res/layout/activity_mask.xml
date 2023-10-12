@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue_900"
+    tools:context=".customview.MaskActivity">
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/cover"
+        app:layout_constraintDimensionRatio="4:3"
+        android:src="@drawable/zn_img_lock_inner_screen_cover"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <com.example.androidlearn.customview.HighlightOverlayView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/cover"
+        app:layout_constraintEnd_toEndOf="@id/cover"
+        app:layout_constraintTop_toTopOf="@id/cover"
+        app:layout_constraintBottom_toBottomOf="@id/cover"
+        android:id="@+id/mask"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

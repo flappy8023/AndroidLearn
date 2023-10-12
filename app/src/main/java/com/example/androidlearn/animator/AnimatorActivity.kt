@@ -3,13 +3,12 @@ package com.example.androidlearn.animator
 import com.example.androidlearn.main.MainActivity
 
 class AnimatorActivity : MainActivity() {
-    override fun getData(): List<String> {
-        return listOf("插值器")
+    override fun getData(): Map<String, Class<*>> {
+        return mapOf(
+            "插值器" to EvaluatorActivity::class.java,
+            "AnimatorSet" to AnimatorSetAct::class.java,
+            "MotionLayout" to MotionAct::class.java
+        )
     }
 
-    override fun click(position: Int) {
-        when (position) {
-            0 -> startAct(EvaluatorActivity::class.java)
-        }
-    }
 }

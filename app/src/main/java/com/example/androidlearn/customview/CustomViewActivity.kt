@@ -3,14 +3,13 @@ package com.example.androidlearn.customview
 import com.example.androidlearn.main.MainActivity
 
 class CustomViewActivity : MainActivity() {
-    override fun getData(): List<String> {
-        return listOf("绘制文字", "圆角View")
-    }
+    override fun getData() = mapOf(
+        "绘制文字" to DrawTextActivity::class.java,
+        "圆角View" to RoundViewActivity::class.java,
+        "View滑动" to ScrollerAct::class.java,
+        "区域高亮" to MaskActivity::class.java,
+        "时钟" to ClockAct::class.java
+    )
 
-    override fun click(position: Int) {
-        when(position){
-            0 -> startAct(DrawTextActivity::class.java)
-            1 -> startAct(RoundViewActivity::class.java)
-        }
-    }
+
 }

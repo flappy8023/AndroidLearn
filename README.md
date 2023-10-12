@@ -1,11 +1,9 @@
 # Android关联知识点练习
 
-## 计划涵盖内容：
+## 已涵盖内容：
 
 * Java基础
-  * IO
   * 多线程
-  * 泛型
 * Kotlin
   * Flow
   * 协程
@@ -16,14 +14,19 @@
   * Provider
 * 自定义View
   * 圆角ImageView
-  * 贝塞尔曲线
+  * 滑动
+  * canvas
 * Jetpack
   * LiveData
   * LifeCycle
   * ViewModel
 * 图片加载
+  * 图片压缩
 * 动画
-* 开源框架
-  * EventBus
-  * 
+  * MotionLayout
+
+## 截图
+| ![](sceentshot/1.jpg) | ![](sceentshot/2.jpg) | ![](sceentshot/3.jpg) |
+| --------------------- | --------------------- | ----------------------|
+| ![](sceentshot/4.jpg) | ![](sceentshot/5.jpg) | ![](sceentshot/6.jpg) |
 

@@ -19,27 +19,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
         <activity
+            android:name=".customview.MaskActivity"
+            android:label="区域高亮"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".kotlin.coroutine.CoroutineActivity"
+            android:label="协程"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".kotlin.KotlinFeatureActivity" />
-        <activity android:name=".bitmap.BitmapCompressActivity" />
-        <activity android:name=".jetpack.JetpackActivity" />
-        <activity android:name=".bitmap.BitmapActivity" />
+        <activity android:name=".kotlin.KotlinFeatureActivity"
+            android:label="Kotlin特性"/>
+        <activity android:name=".bitmap.BitmapCompressActivity"
+            android:label="图片压缩"/>
+        <activity android:name=".jetpack.JetpackActivity"
+            android:label="Jetpack">
+
+        </activity>
+        <activity android:name=".bitmap.BitmapActivity"
+            android:label="图片加载"/>
         <activity
             android:name=".kotlin.flow.FlowTestActivity"
+            android:label="Flow"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-
         </activity>
         <activity
             android:name=".multithread.ThreadActivity"
+            android:label="多线程"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -47,6 +60,7 @@
         </activity>
         <activity
             android:name=".customview.RoundViewActivity"
+            android:label="圆角View"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -54,6 +68,7 @@
         </activity>
         <activity
             android:name=".jetpack.workmanager.WorkManagerActivity"
+            android:label="WorkManager"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -61,6 +76,7 @@
         </activity>
         <activity
             android:name=".fragment.FragmentTestActivity"
+            android:label="Fragment"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -68,32 +84,46 @@
         </activity>
         <activity
             android:name=".backstate.BackgroundActivity"
+            android:label="前后台切换"
             android:exported="false" />
         <activity
             android:name=".animator.AnimatorActivity"
+            android:label="动画"
             android:exported="false" />
         <activity
             android:name=".customview.DrawTextActivity"
+            android:label="绘制文字"
             android:exported="false" />
         <activity
             android:name=".customview.CustomViewActivity"
+            android:label="自定义View"
             android:exported="false" />
         <activity
             android:name=".main.MainActivity"
+            android:label="Practice"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".animator.EvaluatorActivity"
+            android:label="插值器"
             android:exported="true" />
-        <activity android:name=".security.SecurityActivity" />
-        <activity android:name=".security.DHActivity" />
+        <activity android:name=".security.SecurityActivity"
+            android:label="加解密"/>
+        <activity android:name=".security.DHActivity"
+            android:label="DH密钥交换"/>
         <activity
             android:name=".window.SwitchScreenActivity"
             android:configChanges="screenSize|orientation"
+            android:label="屏幕切换"
             android:exported="true" />
         <activity
             android:name=".jetpack.lifecycle.LifecycleActivity"
+            android:label="Lifecycle"
             android:exported="true" />
         <activity
             android:name=".window.FloatingButtonActivity"
@@ -114,6 +144,7 @@
 
         <activity
             android:name=".remoteviews.NotificationActivity"
+            android:label="通知"
             android:exported="true" />
 
         <service
@@ -124,6 +155,7 @@
 
         <activity
             android:name=".ipc.socket.SocketActivity"
+            android:label="Socket"
             android:exported="true" />
 
         <service
@@ -134,11 +166,12 @@
 
         <activity
             android:name=".ipc.provider.ProviderActivity"
+            android:label="Provide"
             android:exported="true" />
         <activity
             android:name=".ipc.messenger.MessengerActivity"
             android:exported="true"
-            android:label="@string/title_activity_messenger"
+            android:label="Messenger"
             android:theme="@style/Theme.AndroidLearn.NoActionBar" />
 
         <service
@@ -149,9 +182,11 @@
 
         <activity
             android:name=".ipc.aidl.AIDLActivity"
+            android:label="AIDL"
             android:exported="true" />
         <activity
             android:name=".jetpack.viewmodel.ViewModelActivity"
+            android:label="ViewModel"
             android:exported="true" />
 
         <service
@@ -168,56 +203,45 @@
 
         <activity
             android:name=".ipc.IPCActivity"
+            android:label="进程间通信"
             android:exported="false" />
         <activity
             android:name=".animator.AnimatorSetAct"
-            android:exported="true">
-
-        </activity>
+            android:label="AnimatorSet"
+            android:exported="true"></activity>
         <activity
             android:name=".customview.ScrollerAct"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"
+            android:label="Scroller"></activity>
         <activity
             android:name=".customview.ClockAct"
-            android:exported="true">
-
-        </activity>
+            android:label="Clock"
+            android:exported="true"></activity>
         <activity
             android:name=".animator.MotionAct"
-            android:exported="true">
-
-        </activity>
+            android:label="MotionLayout"
+            android:exported="true"></activity>
         <activity
             android:name=".performance.RecyclerActivity"
+            android:label="RecyclerView"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity
             android:name=".di.HomeActivity"
-            android:exported="true">
-
-        </activity>
+            android:label="DI"
+            android:exported="true"></activity>
         <activity
             android:name=".backstate.ResultSecondActivity"
             android:exported="false" />
         <activity
             android:name=".backstate.ResultTestActivity"
-            android:exported="true">
-
-
-        </activity>
+            android:label="Result API"
+            android:exported="true"></activity>
         <activity
             android:name=".performance.LeakTestActivity"
-            android:exported="true">
-
-        </activity>
+            android:label="LeakTest"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

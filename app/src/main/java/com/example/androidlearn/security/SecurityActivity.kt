@@ -8,13 +8,8 @@ import com.example.androidlearn.main.MainActivity
  * @Date: Created in 9:34 2022/9/23
  */
 class SecurityActivity :MainActivity(){
-    override fun getData(): List<String> {
-        return listOf("DH密钥交换")
-    }
+    override fun getData() =
+        mapOf("DH密钥交换" to DHActivity::class.java)
 
-    override fun click(position: Int) {
-        when(position){
-            0-> startAct(DHActivity::class.java)
-        }
-    }
+
 }
