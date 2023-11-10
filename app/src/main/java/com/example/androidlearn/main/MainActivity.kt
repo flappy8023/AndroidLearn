@@ -23,7 +23,7 @@ open class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private val adapter by lazy { MainAdapter() }
     override fun initView() {
-        Looper.getMainLooper().setMessageLogging { Log.d("ffffffff", it) }
+//        Looper.getMainLooper().setMessageLogging { Log.d("ffffffff", it) }
         binding.rvMain.apply {
             layoutManager =
                 LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
