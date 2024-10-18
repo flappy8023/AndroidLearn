@@ -1,17 +1,41 @@
 package com.example.androidlearn.di
 
-import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.dsl.module
+import android.app.Activity
+import androidx.core.location.LocationRequestCompat.Quality
+import dagger.Binds
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Qualifier
 
-/**
- * @Author: luweiming
- * @Description:
- * @Date: Created in 10:04 2023/3/16
- */
-val repoModule = module {
-    single { HomeRepo() }
+@Module
+@InstallIn(SingletonComponent::class)
+class Module {
+//    @Provides
+//    fun provideDao() = MyDao()
+
+    @Provides
+    fun provideRepo(dao:MyDao) = HomeRepo(dao)
+
+    @Provides
+    @North
+    fun provideApple():IFruit = Apple()
+
+    @Provides
+    fun apple():Apple=Apple()
+
+    @Provides
+    @South
+    fun providePeach():IFruit = Peach()
+
+
 }
-val viewModelModule = module {
-    viewModel { HomeViewModel(get()) }
-}
-val myModule = listOf(repoModule, viewModelModule)
+
+
+
+@Qualifier
+annotation class North
+@Qualifier
+annotation class South

@@ -102,11 +102,7 @@
             android:name=".main.MainActivity"
             android:label="Practice"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".animator.EvaluatorActivity"
@@ -230,7 +226,13 @@
         <activity
             android:name=".di.HomeActivity"
             android:label="DI"
-            android:exported="true"></activity>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".backstate.ResultSecondActivity"
             android:exported="false" />

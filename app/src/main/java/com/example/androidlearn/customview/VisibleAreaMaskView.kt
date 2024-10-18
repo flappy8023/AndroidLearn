@@ -111,7 +111,7 @@ class VisibleAreaMaskView @JvmOverloads constructor(
             strokeWidth = hStrokeWidth.toFloat()
         }
         canvas?.drawPath(path, paint)
-        canvas?.restoreToCount(saveLayer)
+        canvas?.restoreToCount(saveLayer!!)
 
 
     }

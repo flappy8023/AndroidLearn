@@ -23,6 +23,7 @@ class WorkManagerActivity : AppCompatActivity() {
                 when(it.state){
                     WorkInfo.State.RUNNING -> Log.d(TAG,"worker running")
                     WorkInfo.State.SUCCEEDED -> Log.d(TAG,"worker execute success")
+                    else->""
                 }
             }
     }
